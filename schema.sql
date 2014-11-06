@@ -1,6 +1,11 @@
-drop table if exists entries;
-create table entries (
+drop table if exists user;
+create table user (
   id integer primary key autoincrement,
-  title text not null,
-  text text not null
+  username text not null,
+  email text not null,
+  passwordHash text not null,
+  passwordSalt text not null,
+  timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+  accessLevel int DEFAULT 1
 );
+
