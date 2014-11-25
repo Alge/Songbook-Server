@@ -1,6 +1,7 @@
 # all the imports
 import sqlite3
 from flask import Flask
+from flask import request
 import database
 app = Flask(__name__)
 
@@ -9,15 +10,16 @@ def hello_world():
     return 'Welcome to the songbook api :) There will be a list of functions on this page later'
 
 @app.route('/getSong')
-def hello_world():
-    return 'Hello World!'
+def get_song():
+	songId = request.args.get('id')
+	return songId
     
 @app.route('/collectionInfo')
-def hello_world():
+def collection_info():
     return 'Hello World!'
 
-@app.route('/')
-def hello_world():
+@app.route('/test')
+def test():
     return 'Hello World!'
 
 
